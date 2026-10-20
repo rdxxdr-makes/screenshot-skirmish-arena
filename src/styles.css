@@ -63,73 +63,80 @@
 
 :root {
   --radius: 0.625rem;
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.129 0.042 264.695);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.129 0.042 264.695);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.129 0.042 264.695);
-  --primary: oklch(0.208 0.042 265.755);
-  --primary-foreground: oklch(0.984 0.003 247.858);
-  --secondary: oklch(0.968 0.007 247.896);
-  --secondary-foreground: oklch(0.208 0.042 265.755);
-  --muted: oklch(0.968 0.007 247.896);
-  --muted-foreground: oklch(0.554 0.046 257.417);
-  --accent: oklch(0.968 0.007 247.896);
-  --accent-foreground: oklch(0.208 0.042 265.755);
-  --destructive: oklch(0.577 0.245 27.325);
-  --destructive-foreground: oklch(0.984 0.003 247.858);
-  --border: oklch(0.929 0.013 255.508);
-  --input: oklch(0.929 0.013 255.508);
-  --ring: oklch(0.704 0.04 256.788);
-  --chart-1: oklch(0.646 0.222 41.116);
-  --chart-2: oklch(0.6 0.118 184.704);
-  --chart-3: oklch(0.398 0.07 227.392);
-  --chart-4: oklch(0.828 0.189 84.429);
-  --chart-5: oklch(0.769 0.188 70.08);
-  --sidebar: oklch(0.984 0.003 247.858);
-  --sidebar-foreground: oklch(0.129 0.042 264.695);
-  --sidebar-primary: oklch(0.208 0.042 265.755);
-  --sidebar-primary-foreground: oklch(0.984 0.003 247.858);
-  --sidebar-accent: oklch(0.968 0.007 247.896);
-  --sidebar-accent-foreground: oklch(0.208 0.042 265.755);
-  --sidebar-border: oklch(0.929 0.013 255.508);
-  --sidebar-ring: oklch(0.704 0.04 256.788);
+  --background: oklch(0.16 0.04 257);
+  --foreground: oklch(0.96 0.025 90);
+  --card: oklch(0.23 0.045 256);
+  --card-foreground: oklch(0.96 0.025 90);
+  --popover: oklch(0.2 0.045 256);
+  --popover-foreground: oklch(0.96 0.025 90);
+  --primary: oklch(0.83 0.2 119);
+  --primary-foreground: oklch(0.18 0.04 257);
+  --secondary: oklch(0.28 0.05 255);
+  --secondary-foreground: oklch(0.91 0.03 88);
+  --muted: oklch(0.25 0.045 254);
+  --muted-foreground: oklch(0.74 0.04 247);
+  --accent: oklch(0.71 0.17 32);
+  --accent-foreground: oklch(0.99 0.01 90);
+  --destructive: oklch(0.66 0.21 25);
+  --destructive-foreground: oklch(0.99 0.01 90);
+  --border: oklch(0.41 0.06 251 / 72%);
+  --input: oklch(0.36 0.055 253);
+  --ring: oklch(0.83 0.2 119);
+  --chart-1: oklch(0.83 0.2 119);
+  --chart-2: oklch(0.74 0.16 187);
+  --chart-3: oklch(0.75 0.18 33);
+  --chart-4: oklch(0.75 0.18 300);
+  --chart-5: oklch(0.8 0.16 75);
+  --sidebar: oklch(0.16 0.04 257);
+  --sidebar-foreground: oklch(0.96 0.025 90);
+  --sidebar-primary: oklch(0.83 0.2 119);
+  --sidebar-primary-foreground: oklch(0.18 0.04 257);
+  --sidebar-accent: oklch(0.28 0.05 255);
+  --sidebar-accent-foreground: oklch(0.91 0.03 88);
+  --sidebar-border: oklch(0.41 0.06 251 / 72%);
+  --sidebar-ring: oklch(0.83 0.2 119);
+  --game-volt: oklch(0.83 0.2 119);
+  --game-titan: oklch(0.76 0.16 58);
+  --game-shadow: oklch(0.7 0.17 292);
+  --game-blaze: oklch(0.7 0.19 35);
+  --game-frost: oklch(0.79 0.13 215);
+  --game-aero: oklch(0.77 0.16 188);
+  --game-terra: oklch(0.72 0.14 142);
+  --game-medic: oklch(0.79 0.15 355);
+  --game-neon: oklch(0.77 0.16 322);
+  --game-solar: oklch(0.83 0.18 82);
 }
 
 .dark {
-  --background: oklch(0.129 0.042 264.695);
-  --foreground: oklch(0.984 0.003 247.858);
-  --card: oklch(0.208 0.042 265.755);
-  --card-foreground: oklch(0.984 0.003 247.858);
-  --popover: oklch(0.208 0.042 265.755);
-  --popover-foreground: oklch(0.984 0.003 247.858);
-  --primary: oklch(0.929 0.013 255.508);
-  --primary-foreground: oklch(0.208 0.042 265.755);
-  --secondary: oklch(0.279 0.041 260.031);
-  --secondary-foreground: oklch(0.984 0.003 247.858);
-  --muted: oklch(0.279 0.041 260.031);
-  --muted-foreground: oklch(0.704 0.04 256.788);
-  --accent: oklch(0.279 0.041 260.031);
-  --accent-foreground: oklch(0.984 0.003 247.858);
-  --destructive: oklch(0.704 0.191 22.216);
-  --destructive-foreground: oklch(0.984 0.003 247.858);
-  --border: oklch(1 0 0 / 10%);
-  --input: oklch(1 0 0 / 15%);
-  --ring: oklch(0.551 0.027 264.364);
-  --chart-1: oklch(0.488 0.243 264.376);
-  --chart-2: oklch(0.696 0.17 162.48);
-  --chart-3: oklch(0.769 0.188 70.08);
-  --chart-4: oklch(0.627 0.265 303.9);
-  --chart-5: oklch(0.645 0.246 16.439);
-  --sidebar: oklch(0.208 0.042 265.755);
-  --sidebar-foreground: oklch(0.984 0.003 247.858);
-  --sidebar-primary: oklch(0.488 0.243 264.376);
-  --sidebar-primary-foreground: oklch(0.984 0.003 247.858);
-  --sidebar-accent: oklch(0.279 0.041 260.031);
-  --sidebar-accent-foreground: oklch(0.984 0.003 247.858);
-  --sidebar-border: oklch(1 0 0 / 10%);
-  --sidebar-ring: oklch(0.551 0.027 264.364);
+  --background: oklch(0.16 0.04 257);
+  --foreground: oklch(0.96 0.025 90);
+  --card: oklch(0.23 0.045 256);
+  --card-foreground: oklch(0.96 0.025 90);
+  --popover: oklch(0.2 0.045 256);
+  --popover-foreground: oklch(0.96 0.025 90);
+  --primary: oklch(0.83 0.2 119);
+  --primary-foreground: oklch(0.18 0.04 257);
+  --secondary: oklch(0.28 0.05 255);
+  --secondary-foreground: oklch(0.91 0.03 88);
+  --muted: oklch(0.25 0.045 254);
+  --muted-foreground: oklch(0.74 0.04 247);
+  --accent: oklch(0.71 0.17 32);
+  --accent-foreground: oklch(0.99 0.01 90);
+  --destructive: oklch(0.66 0.21 25);
+  --destructive-foreground: oklch(0.99 0.01 90);
+  --border: oklch(0.41 0.06 251 / 72%);
+  --input: oklch(0.36 0.055 253);
+  --ring: oklch(0.83 0.2 119);
+  --game-volt: oklch(0.83 0.2 119);
+  --game-titan: oklch(0.76 0.16 58);
+  --game-shadow: oklch(0.7 0.17 292);
+  --game-blaze: oklch(0.7 0.19 35);
+  --game-frost: oklch(0.79 0.13 215);
+  --game-aero: oklch(0.77 0.16 188);
+  --game-terra: oklch(0.72 0.14 142);
+  --game-medic: oklch(0.79 0.15 355);
+  --game-neon: oklch(0.77 0.16 322);
+  --game-solar: oklch(0.83 0.18 82);
 }
 
 @layer base {
@@ -140,5 +147,46 @@
   body {
     background-color: var(--color-background);
     color: var(--color-foreground);
+    font-family: "Avenir Next", Avenir, "Segoe UI", sans-serif;
+    font-optical-sizing: auto;
+  }
+}
+
+.game-shell {
+  font-family: "Avenir Next", Avenir, "Segoe UI", sans-serif;
+  background: radial-gradient(ellipse at 50% 42%, oklch(0.25 0.055 220 / 36%), transparent 56%), var(--background);
+}
+
+.game-grid {
+  background-image: linear-gradient(to right, oklch(0.8 0.1 200 / 5%) 1px, transparent 1px), linear-gradient(to bottom, oklch(0.8 0.1 200 / 5%) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+
+.game-panel {
+  background: linear-gradient(135deg, oklch(0.27 0.05 257 / 89%), oklch(0.2 0.045 257 / 82%));
+  border: 1px solid oklch(0.7 0.045 230 / 17%);
+  box-shadow: 0 24px 72px oklch(0.05 0.03 250 / 36%);
+  backdrop-filter: blur(18px);
+}
+
+.game-outline {
+  text-shadow: 0 2px 30px oklch(0.1 0.05 250 / 58%);
+}
+
+.game-scan {
+  background: linear-gradient(180deg, transparent, oklch(0.78 0.12 185 / 7%), transparent);
+  animation: game-scan 7s linear infinite;
+}
+
+@keyframes game-scan {
+  from { transform: translateY(-100%); }
+  to { transform: translateY(100vh); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
   }
 }
