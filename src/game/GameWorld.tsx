@@ -2,7 +2,7 @@ import { Canvas, useFrame, useThree } from "@react-three/fiber";
 import { useEffect, useMemo, useRef, useState } from "react";
 import * as THREE from "three";
 import type { ArenaStats, Hero, Pickup } from "./heroes";
-import { applyDamage, countLivingBots, initialArenaStats, startingPickups } from "./heroes";
+import { applyDamage, countLivingBots, heroes, initialArenaStats, startingPickups } from "./heroes";
 
 type Bot = { id: string; name: string; color: string; x: number; z: number; health: number; yaw: number; slow: number };
 type ControlInput = { up: boolean; down: boolean; left: boolean; right: boolean; shooting: boolean; joystick: { x: number; y: number } };
