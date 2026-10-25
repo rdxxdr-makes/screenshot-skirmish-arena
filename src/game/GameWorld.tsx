@@ -1,5 +1,5 @@
 import { Canvas, useFrame, useThree } from "@react-three/fiber";
-import { useEffect, useMemo, useRef } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import * as THREE from "three";
 import type { ArenaStats, Hero, Pickup } from "./heroes";
 import { applyDamage, countLivingBots, initialArenaStats, startingPickups } from "./heroes";
