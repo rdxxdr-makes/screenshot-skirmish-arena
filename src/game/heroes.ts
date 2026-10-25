@@ -45,6 +45,7 @@ export type ArenaStats = {
   shield: number;
   ammo: number;
   ultimate: number;
+  abilitySeconds: number;
   alive: number;
   zoneSeconds: number;
   elapsed: number;
@@ -55,6 +56,7 @@ export const initialArenaStats = (): ArenaStats => ({
   shield: 75,
   ammo: 24,
   ultimate: 0,
+  abilitySeconds: 0,
   alive: 3,
   zoneSeconds: 62,
   elapsed: 0,
