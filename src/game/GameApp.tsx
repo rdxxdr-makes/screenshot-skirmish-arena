@@ -6,18 +6,18 @@ import { heroes, initialArenaStats, type ArenaStats, type Hero } from "./heroes"
 import { ArrowDown, ArrowLeft, ArrowRight, ArrowUp, Crosshair, Heart, Info, MoveUpRight, Shield, Sparkles, Target, Trophy, Zap } from "lucide-react";
 
 type Phase = "home" | "select" | "playing" | "ended";
-type Controls = { up: boolean; down: boolean; left: boolean; right: boolean; shooting: boolean; joystick: { x: number; y: number } };
+type Controls = { up: boolean; down: boolean; left: boolean; right: boolean; sprint: boolean; jumpQueued: boolean; shooting: boolean; joystick: { x: number; y: number } };
 
 const HERO_TONES: Record<string, string> = {
   volt: "text-game-volt", titan: "text-game-titan", shadow: "text-game-shadow", blaze: "text-game-blaze", frost: "text-game-frost",
   aero: "text-game-aero", terra: "text-game-terra", medic: "text-game-medic", neon: "text-game-neon", solar: "text-game-solar",
 };
 
-const initialControls = (): Controls => ({ up: false, down: false, left: false, right: false, shooting: false, joystick: { x: 0, y: 0 } });
+const initialControls = (): Controls => ({ up: false, down: false, left: false, right: false, sprint: false, jumpQueued: false, shooting: false, joystick: { x: 0, y: 0 } });
 
 export function GameApp() {
   const [phase, setPhase] = useState<Phase>("home");
-  const [hero, setHero] = useState<Hero>(heroes[0]);
+  const [hero, setHero] = useState<Hero>(heroes[0]!);
   const [stats, setStats] = useState<ArenaStats>(initialArenaStats);
   const [notification, setNotification] = useState("");
   const [helpOpen, setHelpOpen] = useState(false);
@@ -104,7 +104,7 @@ export function GameApp() {
   return (
     <main className="game-shell game-grid relative h-[100svh] min-h-[640px] w-full overflow-hidden text-foreground selection:bg-primary/30">
       <div className="absolute inset-0 z-0">
-        <GameWorld hero={hero} phase={phase} input={input} actionsRef={actionsRef} onStats={setStats} onNotice={pushNotice} onEnd={finishRound} />
+        <GameWorld hero={hero} phase={phase} paused={helpOpen} input={input} actionsRef={actionsRef} onStats={setStats} onNotice={pushNotice} onEnd={finishRound} />
       </div>
       <div className="game-scan pointer-events-none absolute inset-x-0 top-0 z-[1] h-1/2 opacity-45" />
       <div className="pointer-events-none absolute inset-0 z-[1] bg-gradient-to-b from-background/30 via-transparent to-background/35" />
