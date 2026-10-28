@@ -130,7 +130,7 @@ function HeroModel({ hero, scale = 1, bob = false, spin = false, motion }: {
   spin?: boolean;
   motion?: React.RefObject<HeroMotion>;
 }) {
-  const look = LOOKS[hero.id] ?? LOOKS.volt!;
+  const look = LOOKS[hero.id] ?? LOOKS["volt"]!;
   const group = useRef<THREE.Group>(null);
   const leftLeg = useRef<THREE.Group>(null);
   const rightLeg = useRef<THREE.Group>(null);
@@ -851,7 +851,7 @@ function ArenaWorld({ hero, phase, paused, input, actionsRef, onStats, onNotice,
       case "volt": case "aero": {
         player.x = THREE.MathUtils.clamp(player.x + forward.x * 4.2, -15, 15);
         player.z = THREE.MathUtils.clamp(player.z + forward.z * 4.2, -15, 15);
-        for (const bot of nearby) { bot.health = Math.max(0, bot.health - 28); bot.flash = 1; if (bot.health === 0) eliminate(bot, "player"); }
+        for (const bot of nearby) { bot.health = Math.max(0, bot.health - 28); motionOf(bot.id).flash = 1; if (bot.health === 0) eliminate(bot, "player"); }
         onNotice(hero.id === "volt" ? "Electricity dash!" : "Aerial leap!");
         break;
       }
@@ -865,7 +865,7 @@ function ArenaWorld({ hero, phase, paused, input, actionsRef, onStats, onNotice,
       case "blaze": case "terra": case "frost": {
         for (const bot of nearby) {
           bot.health = Math.max(0, bot.health - (hero.id === "blaze" ? 38 : 27));
-          bot.flash = 1;
+          motionOf(bot.id).flash = 1;
           if (hero.id === "frost") bot.slow = 4.2;
           if (bot.health === 0) eliminate(bot, "player");
         }
@@ -907,7 +907,7 @@ function ArenaWorld({ hero, phase, paused, input, actionsRef, onStats, onNotice,
         if (bot.isPlayer || bot.health <= 0) continue;
         if (Math.hypot(bot.x - player.x, bot.z - player.z) < range) {
           bot.health = Math.max(0, bot.health - 45);
-          bot.flash = 1;
+          motionOf(bot.id).flash = 1;
           if (bot.health === 0) eliminate(bot, "player");
         }
       }
@@ -1124,7 +1124,7 @@ function ArenaWorld({ hero, phase, paused, input, actionsRef, onStats, onNotice,
         }
         if (hit) {
           bolt.active = false;
-          hit.flash = 1;
+          motionOf(hit.id).flash = 1;
           spawnImpact(hit.x, hit.z, false);
           applyBoltHit(hit, bolt);
         } else if (bolt.life <= 0 || bolt.y < 0.05 || Math.hypot(bolt.x, bolt.z) > 21) {
@@ -1211,6 +1211,8 @@ function ArenaWorld({ hero, phase, paused, input, actionsRef, onStats, onNotice,
     camera.position.lerp(target, 1 - Math.exp(-3.4 * dt));
     camera.lookAt(cameraLook);
   });
+
+  const player = fighters.current.find((f) => f.isPlayer)!;
 
   return (
     <>
