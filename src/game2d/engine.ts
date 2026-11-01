@@ -111,7 +111,8 @@ export function netOf(p: Player): NetPlayer {
 }
 
 export function respawnPick(terrain: Terrain, avoid: { x: number; y: number }[]): { x: number; y: number } {
-  let best = terrain.spawns[0];
+  const fallback = { x: terrain.worldW / 2, y: 1200 };
+  let best = terrain.spawns[0] ?? fallback;
   let bestScore = -1;
   for (const s of terrain.spawns) {
     let minDist = Infinity;
@@ -363,6 +364,7 @@ export function drainJetEmit(particles: Particle[]) {
 export function stepParticles(particles: Particle[], dt: number) {
   for (let i = particles.length - 1; i >= 0; i--) {
     const q = particles[i];
+    if (!q) continue;
     q.life -= dt;
     if (q.life <= 0) {
       particles.splice(i, 1);
@@ -403,8 +405,10 @@ export function botThink(
   if (!target || !target.alive) {
     if (bot.wpX === 0 || Math.hypot(bot.wpX - bot.x, bot.wpY - bot.y) < 60) {
       const s = terrain.spawns[Math.floor(Math.random() * terrain.spawns.length)];
-      bot.wpX = s.x;
-      bot.wpY = s.y;
+      if (s) {
+        bot.wpX = s.x;
+        bot.wpY = s.y;
+      }
     }
     return steerTo(bot, terrain, bot.wpX, bot.wpY, dt, input, false);
   }

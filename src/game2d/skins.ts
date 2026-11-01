@@ -23,5 +23,6 @@ export const SKINS: Skin[] = [
 ];
 
 export function getSkin(id: number): Skin {
-  return SKINS[((id % SKINS.length) + SKINS.length) % SKINS.length];
+  const idx = ((id % SKINS.length) + SKINS.length) % SKINS.length;
+  return SKINS[idx] ?? SKINS[0]!;
 }
